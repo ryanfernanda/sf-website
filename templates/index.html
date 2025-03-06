@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/Logo.png" type="image/x-icon" />
+    <title>S A F O U N D</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo"><b>S A F O U N D</b></div>
+            <nav>
+                <a href="#"><b>Home</b></a>
+                <a href="#">About Us</a>
+            </nav>
+        </header>
+        <p class="subtitle1">An AI-powered tool for earthquake mitigation</p>
+        <h1>Instantly estimate the safety factor of<br>shallow foundations
+            <span class="gradient-text">with AI</span>
+            <!-- SVG Fallback for Firefox and Other Browsers -->
+            <svg width="0" height="0">
+                <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#EC4545;" />
+                    <stop offset="100%" style="stop-color:#3A17EA;" />
+                </linearGradient>
+                </defs>
+            </svg>
+        </h1>
+        <div class="subtitle-container">
+            <p class="subtitle2" id="changingText"><i>Try it down below!</i></p>
+        </div>
+        <form id="sf-form">
+        <div class="input-container">
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="pga" style="text-align: center;">PGA (g)</label>
+                    <input type="number" name="pga" step="0.1" placeholder="Between 0 to 1">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="b" style="text-align: center;">Width (m)</label>
+                    <input type="number" name="b" step="0.1" placeholder="Between 0.5 to 3.0">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="df" style="text-align: center;">Depth (m)</label>
+                    <input type="number" name="df" step="0.1" placeholder="Between 0.5 to 2.5">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="y" style="text-align: center;">Soil Density (kN/m<sup>3</sup>)</label>
+                    <input type="number" name="y" step="0.1" placeholder="Between 17 to 21">
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-box">
+                    <label for="p" style="text-align: center;">Load (kN)</label>
+                    <input type="number" name="p" step="0.1" placeholder="Between 50 to 200">
+                </div>
+            </div>
+        </div>
+        <button type="submit" disabled>Proceed</button>
+        </form>
+        <div class="result-container">
+            <div class="foundation-overview">
+                <img src="/static/images/shallow_foundation.png" alt="Foundation Structure" id="foundation-image">
+                <div class="overlay-values">
+                  <span id="pga-value" class="overlay-value">PGA</span>
+                  <span id="b-value" class="overlay-value">B</span>
+                  <span id="df-value" class="overlay-value">DF</span>
+                  <span id="y-value" class="overlay-value">Y</span>
+                  <span id="p-value" class="overlay-value">P</span>
+                </div>
+            </div>
+            <div id="result">
+                <span class="grey">
+                    <a style="font-weight:bold; font-size:28px;">Summary</a> 
+                    <br>Based on the parameters that you can see in the overview, your foundation's safety factor score is
+                    <br><a id="sf-value" style="font-size: 21px; font-weight: bold;">•••</a> 
+                    <a id="sf-status" style="font-size: 20px; margin-left: 5px;"></a>
+                </span>
+            </div>
+        </div>
+        <div id="recent-predictions">
+            <table>
+            <thead>
+                <tr>
+                <th width=40></th>
+                <th width=65><i>PGA(g)</i></th>
+                <th width=65><i>B(m)</i></th>
+                <th width=65><i>D<sub>f</sub> (m)</i></th>
+                <th width=65><i>&#947; (kN/m<sup>3</sup>)</i></th>
+                <th width=65><i>P(kN)</i></th>
+                <th width=65><i>SF</i></th>
+                <th width=65></th>
+                </tr>
+            </thead>
+            <tbody id="predictions-list">
+                <!-- Predictions will be inserted here dynamically -->
+            </tbody>
+            </table>
+            <button id="download-csv">
+                <i class="fa fa-arrow-down" aria-hidden="true"></i>&nbsp;
+                <span style="font-weight: bold;">.CSV</span>
+            </button>
+        </div>
+    </div>
+    <div class="cityscape"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+<footer>
+    .
+</footer>
+</html>

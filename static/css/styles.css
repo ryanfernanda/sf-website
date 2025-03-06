@@ -1,0 +1,278 @@
+body {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+.logo {
+    font-size: 24px;
+    /*font-weight: bold;*/
+}
+nav a {
+
+    margin-left: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000000;
+}
+h1 {
+    font-size: 47px;
+    text-align: center;
+    line-height: 1.3;
+    margin-top: 10px;
+}
+.gradient-text {
+    background: linear-gradient(45deg, #EC4545, #3A17EA); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: inherit;
+}
+.subtitle-container {
+    margin-top: 0px;
+    height: 30px; /* Set a fixed height to prevent layout shift */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the text vertically */
+}
+.subtitle1 {
+    font-size: 24px;
+    text-align: center;
+    color: #000000;
+    margin-top: 100px;
+    margin-bottom: 0px;
+}
+.subtitle2 {
+    font-size: 17px;
+    text-align: center;
+    color: #545454;
+    white-space: nowrap;
+}
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    height: 85px;
+    width: 100%;
+}
+.input-group {
+    width: 17%;
+    transition: transform 0.3s ease; /* Add smooth scaling */
+}
+.input-box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    transition: box-shadow 0.3s ease, padding 0.3s ease;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+}
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    background-color: #f0f0f0;
+    -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input::placeholder {
+    font: 0.8rem sans-serif;
+}
+/* Interactive focus effect */
+.input-group:focus-within {
+    transform: scale(1.05); /* Slightly enlarge the input-group */
+}
+.input-box:focus-within {
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.35); /* Increase shadow */
+    padding: 12px; /* Slightly increase padding */
+}
+label:focus-within {
+    font-size: 18px; /* Increase label size slightly */
+    color: #000; /* Optionally change label color to black */
+}
+button {
+    display: block;
+    width: 100px;
+    margin: 20px auto;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #ccc;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: not-allowed;
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    transition: transform 0.3s ease-in-out;
+}
+button.active {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+button.active:hover {
+    transform: scale(1.1);
+}
+.result-container {
+    display: flex;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center;
+    margin: 20px auto 28px; /* Adjusts top and bottom margins */
+    height: auto;
+    width: 95%;
+}
+
+.foundation-overview {
+    position: relative;
+    width: 45%;
+}
+  
+#foundation-image {
+    width: 100%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+  
+.overlay-values {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+.overlay-value {
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+  
+#pga-value { bottom: 27%; left: 14%; color: red; }
+#b-value { bottom: 11%; right: 36%; }
+#df-value { top: 47%; right: 4%; }
+#y-value { bottom: 46%; left: 23%; color: white;}
+#p-value { top: 10%; right: 35%; color: red;}
+
+#result {
+    align-items: center;
+    text-align: left;
+    font-size: 19px;
+    line-height: 1.9;
+    width: 55%;
+    display: block; /* Ensures it's block-level */
+    height: 276.36px;   /* Adjust height as needed */
+}
+#result span {
+    margin-left: 20px;
+    margin-top: 36px; /* Adjust the gap for the first text element */
+    display: inline-block; /* Make sure margin-top works on the a tag */
+}
+.grey {
+    color: rgb(182, 182, 182); /* Color for the placeholder */
+}
+.black {
+    color: black; /* Color for the actual score */
+}
+.cityscape {
+    width: 100%;
+    height: 78px;
+    background-image: url('/static/images/city-scape.jpeg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    bottom: 0;
+    left: 0;
+    z-index: 0; /* Ensures the image stays on top of other elements */
+}
+footer {
+    font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+    margin: 0;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    padding-right: 12px;
+    background-color: #1d1d1b;
+    font-size: 10px;
+    text-align: right;
+    color: #1d1d1b;
+}
+
+#recent-predictions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
+#recent-predictions table {
+    width: 95%;
+    align-self : center;
+    border-collapse: collapse;
+    background-color: white;
+}
+  
+#recent-predictions th {
+    background-color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    height : 30px;
+}
+
+#recent-predictions tr, #recent-predictions td {
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
+    height: 40px; /* Adjust this value to set your desired row height */
+}
+
+#recent-predictions tr:nth-child(even) {
+    background: #f2f2f2;
+}
+  
+#recent-predictions .delete-btn {
+    background-color: transparent;
+    color: #ff4d4d; /* Red color for the "Delete" text */
+    border: none;
+    cursor: pointer;
+    font-size: 15px; /* Adjust the font size */
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+#recent-predictions .delete-btn:hover {
+    color: #ff1a1a; /* Change to a darker red on hover */
+}
+  
+#download-csv {
+    margin-top: 25px;
+    height: 35px;
+    background-color: #ffffff;
+    color: black;
+    border: 2px solid black;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 20px;
+}
