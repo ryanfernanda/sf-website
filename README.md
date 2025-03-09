@@ -9,7 +9,8 @@
 
 SAFOUND is an AI-powered web application that instantly calculates the safety factor of shallow foundations under earthquake conditions. Leveraging the Kolmogorov-Arnold Networks (KAN) algorithm, this tool provides engineers, architects, and construction professionals with quick and reliable safety assessments for foundation designs.
 
-![Foundation Image](static/images/shallow_foundation.png)
+![Website UI - No Input](Screenshot-Home-Page-1.png)
+![Website UI - With Input](Screenshot-Home-Page-2.png)
 
 ## Features
 
